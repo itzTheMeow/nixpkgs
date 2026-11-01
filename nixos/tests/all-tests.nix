@@ -233,6 +233,7 @@ in
   # NixOS vm tests and non-vm unit tests
 
   # keep-sorted start case=no numeric=no block=yes
+  _1password-connect = runTest ./_1password-connect.nix;
   _3proxy = runTest ./3proxy.nix;
   aaaaxy = runTest ./aaaaxy.nix;
   accountsservice = runTest ./accountsservice.nix;

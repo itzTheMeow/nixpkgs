@@ -6,6 +6,7 @@
   jq,
   libarchive,
   testers,
+  nixosTests,
 }:
 let
   hashes = builtins.fromJSON (builtins.readFile ./hashes.json);
@@ -112,6 +113,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
         package = finalAttrs.finalPackage;
         command = "connect-sync --version";
       };
+
+      # NixOS module test (nixos/tests/_1password-connect.nix).
+      connect-module = nixosTests._1password-connect;
     };
   };
 
